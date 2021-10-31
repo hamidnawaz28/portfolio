@@ -7,6 +7,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Grid } from "@mui/material";
 import { PersonalDetails } from "../containers/personal-details";
+import { PDFViewer } from "../components/pdf-viewer";
 
 const useStyles = makeStyles({
   root: {
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
   const { t, i18n } = useTranslation();
 
   const { root } = useStyles();
+  const url = "./personal-data/hamidcv.pdf";
 
   return (
     <div>
@@ -29,6 +31,7 @@ const Home: NextPage = () => {
         pageUrl=""
       />
       <main>
+        <PDFViewer url={url} />
         <PersonalDetails />
       </main>
       <Footer />

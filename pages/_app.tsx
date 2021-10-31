@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     const request = await fetch("https://ipinfo.io/json?token=f49864b253a53e");
     const data = await request.json();
     getData(data);
-    console.log("-----Data---", data);
     addADoc("user-ip", data);
   };
 
