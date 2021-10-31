@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme: Theme) => {
     link: {
       color: "white",
     },
+    iconsCont: {
+      display: "flex",
+      justifyContent: "center",
+    },
   };
 });
 
@@ -54,7 +58,7 @@ const whatsapp = {
 };
 
 export default function Footer() {
-  const { footer, link, copyright } = useStyles();
+  const { footer, link, copyright, iconsCont } = useStyles();
 
   const icons: any = [
     {
@@ -81,14 +85,16 @@ export default function Footer() {
 
   return (
     <footer className={footer}>
-      {icons.map((el: any, id: number) => {
-        const { url, icon } = el;
-        return (
-          <Link href={url} target="_blank" className={link} key={id}>
-            {icon}
-          </Link>
-        );
-      })}
+      <div className={iconsCont}>
+        {icons.map((el: any, id: number) => {
+          const { url, icon } = el;
+          return (
+            <Link href={url} target="_blank" className={link} key={id}>
+              {icon}
+            </Link>
+          );
+        })}
+      </div>
       <Typography align="center" className={copyright}>
         @Copyright! All Rights Reserved 2021
       </Typography>

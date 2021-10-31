@@ -557,6 +557,13 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/pdf-viewer-reactjs@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@types/pdf-viewer-reactjs/-/pdf-viewer-reactjs-2.2.2.tgz#4b333e6d5c6fff79dace62d310cf91d62e426f90"
+  integrity sha512-pqZURKFhlxU7aVJA0ugXgu5mmHjCI0ppp3nqN4rDFCH168JOZNwEB9uerf2u881dViyASLfwUWDIEd3wESOnWg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/prop-types@*", "@types/prop-types@^15.7.4":
   version "15.7.4"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"

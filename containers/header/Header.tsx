@@ -56,12 +56,12 @@ export default function ButtonAppBar() {
               <span>Nawaz</span>
             </Link>
           </Typography>
-          <Link href="/" underline="none">
+          {/* <Link href="/" underline="none">
             <Button>Services</Button>
-          </Link>
-          <Link href="/about-me" underline="none">
-            <Button>About Us</Button>
-          </Link>
+          </Link> */}
+          {/* <Link href="/about-me" underline="none">
+            <Button>About Me</Button>
+          </Link> */}
 
           <Link href="/contact-me" underline="none">
             <Button style={{ backgroundColor: "#F27171", color: "white" }}>
