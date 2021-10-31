@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    getIPData();
+    // getIPData();
   }, []);
 
   return (
