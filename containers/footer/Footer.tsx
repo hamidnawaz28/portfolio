@@ -52,7 +52,7 @@ const siteLinks: any = [
 const email = "info@hamidnawaz.com";
 
 const whatsapp = {
-  url: "https://wa.me/message/BQNERPAFPKHYE1",
+  url: "https://wa.me/message/I37QMGAGKDOOA1",
   qrImg: "others/qr-code.jpg",
   qrAlt: "Hamid Nawaz QR",
 };

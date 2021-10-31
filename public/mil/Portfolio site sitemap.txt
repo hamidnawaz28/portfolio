@@ -1,0 +1,18 @@
+
+
+Home				=> Picture, Quick Contact, Skills, Work History ,Pro Achievements , Education, Certifications
+Life Stories		=> Life events(	University, How i went to china, Huawei Luck )
+Tech Blogs			=> Typescript, Ecmascript, SASS, React, Next, SEO, Internationalization, Django, AWS(ec2, s3 ), Node, Express, Github Actions, CircleCI, Versel Deploy, Automation,r, Selenium, NumPy and Pandas
+Portfolio/Showcase	=> Project details, links, pics
+About Me			=> Motivation, Target and interests
+Contact				=> Contact Details(FB,	Twitter, Insta, Github, Discord), Mail Form, Whatsapp, Firebase Chat
+Games				=>
+
+
+Stack: 
+	Front: React,Context Api, Redux
+	Backend: Firebase and Node(may be sometime in future)
+	Deploy: Versel
+	
+	
+	
