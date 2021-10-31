@@ -4,8 +4,24 @@ import type { AppProps } from "next/app";
 import theme from "../components/theme";
 import { ThemeProvider } from "@mui/material";
 import { Header } from "../containers/header";
+import { useState, useEffect } from "react";
+import { addADoc } from "../firebase";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [data, getData] = useState({});
+
+  const getIPData = async () => {
+    const request = await fetch("https://ipinfo.io/json?token=f49864b253a53e");
+    const data = await request.json();
+    getData(data);
+    console.log("-----Data---", data);
+    addADoc("user-ip", data);
+  };
+
+  useEffect(() => {
+    getIPData();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Header />
