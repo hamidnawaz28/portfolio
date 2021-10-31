@@ -16,16 +16,16 @@ import { Theme } from "@mui/system";
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "white",
+    backgroundColor: theme.palette.common.white,
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    color: "black",
+    color: theme.palette.common.black,
   },
   title: {
     flexGrow: 1,
     fontFamily: "Aller",
-    color: "black",
+    color: theme.palette.common.black,
     "& span:nth-child(1)": {
       color: theme.palette.primary.main,
     },
@@ -34,7 +34,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   toolBar: {
-    backgroundColor: "white",
+    backgroundColor: theme.palette.common.white,
+  },
+  contact: {
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.common.white,
   },
 }));
 
@@ -64,9 +68,7 @@ export default function ButtonAppBar() {
           </Link> */}
 
           <Link href="/contact-me" underline="none">
-            <Button style={{ backgroundColor: "#F27171", color: "white" }}>
-              Contact
-            </Button>
+            <Button className={classes.contact}>Contact</Button>
           </Link>
         </Toolbar>
       </AppBar>
