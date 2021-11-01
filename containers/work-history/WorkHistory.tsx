@@ -46,7 +46,6 @@ const workHistory = [
       "PostgreSQL",
       "AWS",
       "Redux",
-      "Saga",
       "Material UI",
       "Nginx",
     ],
@@ -82,7 +81,7 @@ const workHistory = [
       "Got 4.9 out of 5 star rating in 6 projects",
     ],
     links: [],
-    stack: ["Embedded C", "Verilog", "VHDL"],
+    stack: ["Embedded C"],
   },
 ];
 

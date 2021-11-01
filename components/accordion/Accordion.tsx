@@ -10,6 +10,23 @@ import {
 import { ExpandMore } from "@mui/icons-material";
 import { Theme } from "@mui/system";
 import { useState } from "react";
+import {
+  AWS,
+  CProgramming,
+  Django,
+  Figma,
+  Firebase,
+  Javascript,
+  Jira,
+  MaterialUi,
+  Nginx,
+  PostgreSQl,
+  Python,
+  React,
+  Redux,
+  Typescript,
+  Vue,
+} from "../icons";
 
 type AccordianProps = {
   data: any;
@@ -20,9 +37,26 @@ const useStyles = makeStyles((theme: Theme) => ({
   stackCont: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    padding: 5,
   },
 }));
+const logoIcons: any = {
+  Typescript: <Typescript />,
+  Javascript: <Javascript />,
+  Vue: <Vue />,
+  AWS: <AWS />,
+  React: <React />,
+  Python: <Python />,
+  Firebase: <Firebase />,
+  Jira: <Jira />,
+  Redux: <Redux />,
+  Figma: <Figma />,
+  Django: <Django />,
+  PostgreSQL: <PostgreSQl />,
+  Nginx: <Nginx />,
+  "Material UI": <MaterialUi />,
+  "Embedded C": <CProgramming />,
+};
 
 export default function SimpleAccordion({ data }: AccordianProps) {
   const classes = useStyles();
@@ -70,10 +104,10 @@ export default function SimpleAccordion({ data }: AccordianProps) {
         <Typography variant="body2">Tech Stack:</Typography>
         <div className={stackCont}>
           {stack.map((item: any, id: number) => {
-            return <Typography key={id}>{item}</Typography>;
+            return <div key={id}>{logoIcons[item]}</div>;
           })}
         </div>
-        <Typography>Links:</Typography>
+        {links.length != 0 && <Typography>Links:</Typography>}
         <div>
           {links.map((el: any, id: number) => {
             return (
