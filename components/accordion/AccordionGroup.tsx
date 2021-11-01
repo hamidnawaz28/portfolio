@@ -32,9 +32,9 @@ export default function AccordianGroup({ dataArr }: AppProps) {
   return (
     <div className={root}>
       <TimelineWrap position="right">
-        {dataArr?.map((item: any, key: number) => (
+        {dataArr?.map((el: any, key: number) => (
           <Timeline key={key}>
-            <Accordion title={item.jobTitle} details={item.details} />
+            <Accordion data={el} />
           </Timeline>
         ))}
       </TimelineWrap>

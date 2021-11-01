@@ -19,7 +19,15 @@ const workHistory = [
       "Developed application for the tech startups to calculate their performance index and included the content needed for Investors to have more insights about the company standing",
     ],
     links: [],
-    stack: "React, Firebase,Jira, Redux, Material UI, Figma",
+    stack: [
+      "Typescript",
+      "React",
+      "Firebase",
+      "Jira",
+      "Redux",
+      "Material UI",
+      "Figma",
+    ],
   },
   {
     jobTitle: "Full Stack Developer | React | Django | AWS",
@@ -32,7 +40,16 @@ const workHistory = [
       "Developed a SAAS procurement and analysis platform for decreasing the procurement costs, improving visibility, efficiency and transparency by analyzing and categorization the spend data, then displaying useful information using interactive dashboards.",
     ],
     links: ["robolyx.com"],
-    stack: "React, Django, PostgreSQL, AWS, Redux, Saga, Material UI, Nginx",
+    stack: [
+      "React",
+      "Django",
+      "PostgreSQL",
+      "AWS",
+      "Redux",
+      "Saga",
+      "Material UI",
+      "Nginx",
+    ],
   },
   {
     jobTitle: "Full Stack Developer | JavaScript | My SQL | ES6",
@@ -50,7 +67,7 @@ const workHistory = [
       "Selenium-based automation tools",
     ],
     links: ["starling.hrms.huawei.com"],
-    stack: "JS, ES6, Vue, React, Python",
+    stack: ["Javascript", "ES6", "Vue", "React", "Python"],
   },
   {
     jobTitle: "Embedded C developer",
@@ -65,7 +82,7 @@ const workHistory = [
       "Got 4.9 out of 5 star rating in 6 projects",
     ],
     links: [],
-    stack: "Embedded C, Verilog, VHDL",
+    stack: ["Embedded C", "Verilog", "VHDL"],
   },
 ];
 

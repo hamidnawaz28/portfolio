@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Grid } from "@mui/material";
 import { PersonalDetails } from "../containers/personal-details";
 import { WorkHistory } from "../containers/work-history";
+
 const useStyles = makeStyles({
   root: {
     verticalAlign: "center",
