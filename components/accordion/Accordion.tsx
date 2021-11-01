@@ -7,9 +7,10 @@ import {
   Typography,
   Link,
 } from "@mui/material";
-import { ExpandMore } from "@mui/icons-material";
+import { ExpandMore, Business, LocationOn } from "@mui/icons-material";
 import { Theme } from "@mui/system";
 import { useState } from "react";
+import { Dates as DateCard } from "../cards";
 import {
   AWS,
   CProgramming,
@@ -39,6 +40,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: "row",
     padding: 5,
   },
+  quickDetails: {
+    display: "grid",
+    gridTemplateColumns: "70% 30%",
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "repeat(1,1fr)",
+    },
+    paddingBottom: 20,
+  },
+  flexDisplay: {
+    display: "flex",
+    flexDirection: "row",
+  },
 }));
 const logoIcons: any = {
   Typescript: <Typescript />,
@@ -60,7 +73,7 @@ const logoIcons: any = {
 
 export default function SimpleAccordion({ data }: AccordianProps) {
   const classes = useStyles();
-  const { heading, stackCont } = classes;
+  const { heading, stackCont, quickDetails, flexDisplay } = classes;
   const [expanded, isExpanded] = useState(true);
   const {
     jobTitle,
@@ -85,10 +98,22 @@ export default function SimpleAccordion({ data }: AccordianProps) {
         <Typography variant="body1">{jobTitle}</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography variant="body1">{from}</Typography>
-        <Typography variant="body1">{to}</Typography>
-        <Typography variant="body1">{company}</Typography>
-        <Typography variant="body1">{location}</Typography>
+        <div className={quickDetails}>
+          <div>
+            <div className={flexDisplay}>
+              <Business style={{ paddingRight: 10 }} />
+              <Typography variant="body1">{company}</Typography>
+            </div>
+            <div className={flexDisplay}>
+              <LocationOn style={{ paddingRight: 10 }} />
+              <Typography variant="body1">{location}</Typography>
+            </div>
+          </div>
+          <div style={{ verticalAlign: "center" }}>
+            <DateCard from={from} to={to} />
+          </div>
+        </div>
+
         <Typography variant="body1" gutterBottom>
           {summary}
         </Typography>
