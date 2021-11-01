@@ -11,14 +11,20 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [data, getData] = useState({});
 
   const getIPData = async () => {
-    const request = await fetch("https://ipinfo.io/json?token=f49864b253a53e");
-    const data = await request.json();
-    getData(data);
-    addADoc("user-ip", data);
+    try {
+      const request = await fetch(
+        "https://ipinfo.io/json?token=f49864b253a53e"
+      );
+      const data = await request.json();
+      getData(data);
+      addADoc("user-ip", data);
+    } catch (err) {
+      console.log("-----ipinfo----", err);
+    }
   };
 
   useEffect(() => {
-    // getIPData();
+    getIPData();
   }, []);
 
   return (
