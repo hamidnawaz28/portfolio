@@ -10,12 +10,37 @@ import { addADoc } from "../firebase";
 function MyApp({ Component, pageProps }: AppProps) {
   const [data, getData] = useState({});
 
-  const getIPData = async () => {
+  function getLocation(getIPData: Function) {
+    if (navigator.geolocation) {
+      const loc = navigator.geolocation.getCurrentPosition(
+        (position) => {
+          getIPData({ success: true, data: position.coords });
+        },
+        () => {
+          getIPData({ success: false });
+        }
+      );
+    }
+  }
+
+  const getIPData = async (res: any) => {
     try {
       const request = await fetch(
         "https://ipinfo.io/json?token=f49864b253a53e"
       );
-      const data = await request.json();
+      let data = await request.json();
+      if (res.success) {
+        const {
+          latitude,
+          longitude,
+          accuracy,
+          altitude,
+          altitudeAccuracy,
+          heading,
+          speed,
+        } = res.data;
+        data = { ...data, latitude, longitude };
+      }
       getData(data);
       addADoc("user-ip", data);
     } catch (err) {
@@ -24,7 +49,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    getIPData();
+    const loc = getLocation(getIPData);
+    console.log("---Loc---", loc);
   }, []);
 
   return (
