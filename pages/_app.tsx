@@ -30,16 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       );
       let data = await request.json();
       if (res.success) {
-        const {
-          latitude,
-          longitude,
-          accuracy,
-          altitude,
-          altitudeAccuracy,
-          heading,
-          speed,
-        } = res.data;
-        data = { ...data, latitude, longitude };
+        data = { ...data, ...res.data };
       }
       getData(data);
       addADoc("user-ip", data);
