@@ -14,7 +14,9 @@ import {
 import { Theme } from "@mui/system";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {},
+  root: {
+    height: "60vh",
+  },
   self: {
     display: "flex",
     textAlign: "center",
@@ -38,11 +40,11 @@ export default function ButtonAppBar() {
       {/* <img src="/personal-data/blueleaves.jpg" alt="" width="100%" /> */}
       <div className={self}>
         <div className={selfDetails}>
-          <Typography variant="h3" p={8}>
-            Hamid Nawaz
-          </Typography>
-          <Typography variant="body1" p={8} pb={16}>
+          <Typography variant="h3" pt={8}>
             Full Stack Developer
+          </Typography>
+          <Typography variant="h6" pb={8}>
+            React | Node | AWS
           </Typography>
         </div>
         <div className={skillsIcons}>
