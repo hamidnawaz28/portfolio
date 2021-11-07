@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
 import theme from "../components/theme";
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import { Header } from "../containers/header";
 import { useState, useEffect } from "react";
 import { addADoc } from "../firebase";
@@ -40,8 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    const loc = getLocation(getIPData);
-    console.log("---Loc---", loc);
+    // getLocation(getIPData);
   }, []);
 
   return (

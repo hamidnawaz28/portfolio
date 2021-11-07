@@ -52,6 +52,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     flexDirection: "row",
   },
+  comLoc: {
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-around",
+    },
+  },
 }));
 const logoIcons: any = {
   Typescript: <Typescript />,
@@ -73,7 +80,7 @@ const logoIcons: any = {
 
 export default function SimpleAccordion({ data }: AccordianProps) {
   const classes = useStyles();
-  const { heading, stackCont, quickDetails, flexDisplay } = classes;
+  const { heading, stackCont, quickDetails, flexDisplay, comLoc } = classes;
   const [expanded, isExpanded] = useState(true);
   const {
     jobTitle,
@@ -95,11 +102,11 @@ export default function SimpleAccordion({ data }: AccordianProps) {
         id="panel1a-header"
         onClick={() => isExpanded(!expanded)}
       >
-        <Typography variant="body1">{jobTitle}</Typography>
+        <Typography variant="subtitle1">{jobTitle}</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <div className={quickDetails}>
-          <div>
+          <div className={comLoc}>
             <div className={flexDisplay}>
               <Business style={{ paddingRight: 10 }} />
               <Typography variant="body1">{company}</Typography>

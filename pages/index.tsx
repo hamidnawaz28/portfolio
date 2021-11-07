@@ -30,8 +30,8 @@ const Home: NextPage = () => {
         pageUrl=""
       />
       <main>
-        <WorkHistory />
         <PersonalDetails />
+        <WorkHistory />
       </main>
       <Footer />
     </div>

@@ -90,7 +90,7 @@ export default function WorkHistory() {
 
   return (
     <div className={root}>
-      <Typography variant="h5" align="center">
+      <Typography variant="h6" align="center">
         Work History
       </Typography>
       <AccordionGroup dataArr={workHistory} />

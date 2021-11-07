@@ -157,9 +157,9 @@ const theme = createTheme({
       letterSpacing: "0.0075em",
     },
     subtitle1: {
-      fontFamily: graceFont,
-      fontWeight: 400,
-      fontSize: "1rem",
+      fontFamily: boldFont,
+      fontWeight: 500,
+      fontSize: "1.1rem",
       lineHeight: 1.75,
       letterSpacing: "0.00938em",
     },
@@ -172,7 +172,7 @@ const theme = createTheme({
     },
     body1: {
       fontFamily: graceFont,
-      fontWeight: 400,
+      fontWeight: 300,
       fontSize: "1rem",
       lineHeight: 1.5,
       letterSpacing: "0.00938em",
