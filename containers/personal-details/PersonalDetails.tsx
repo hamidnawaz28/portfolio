@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
 
-import { Typography } from "@mui/material";
+import { Typography, Link } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import {
   React,
@@ -46,13 +46,29 @@ export default function ButtonAppBar() {
           <Typography variant="h6" pb={8}>
             React | Node | AWS
           </Typography>
+          <Typography variant="h6" pb={8}>
+            <Link href="https://github.com/hamidnawaz28" underline="none">
+              Visit Github
+            </Link>
+            {" | "}
+            <Link
+              href="/personal-data/hamidcv.pdf"
+              underline="none"
+              color="secondary"
+              target="_blank"
+            >
+              Download CV
+            </Link>
+          </Typography>
         </div>
         <div className={skillsIcons}>
           <React />
           <Typescript />
           <Node />
           <MaterialUi />
-          <Firebase /> <Jira /> <AWS />
+          <Firebase />
+          <Jira />
+          <AWS />
         </div>
       </div>
     </div>
