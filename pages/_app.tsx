@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    // getLocation(getIPData);
+    if (process.env.NODE_ENV != "development") getLocation(getIPData);
   }, []);
 
   return (
