@@ -9,15 +9,16 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const workHistory = [
    {
-    jobTitle: "Lead Full Stack | React | Node",
+    jobTitle: "Lead Full Stack Developer | React | Node",
     company: "Nova",
     location: "Liverpool, UK(Remote)",
     from: "Jan 2022",
     to: "Present",
     summary: "As lead full stack developer my tasks are",
     details: [
+      "Working on a SAAS platform for one of the leading tech startup of UK.", "Along with routine developement tasks, provide technical solutions on day to day challenges","Managing all the team members and supporting them in technical glitches","Making sure the quality work is being delivered"
      ],
-    links: ["Working on a SAAS platform for one of the leading tech startup of UK.", "Along with routine developement tasks, provide technical solutions on day to day challenges","Managing all the team members and supporting them in technical glitches","Making sure the quality work is being delivered"],
+    links: [],
     stack: [
       "Javascript",
       "React",
