@@ -8,12 +8,31 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {},
 }));
 const workHistory = [
+   {
+    jobTitle: "Lead Full Stack | React | Node",
+    company: "Nova",
+    location: "Liverpool, UK(Remote)",
+    from: "Jan 2022",
+    to: "Present",
+    summary: "As lead full stack developer my tasks are",
+    details: [
+     ],
+    links: ["Working on a SAAS platform for one of the leading tech startup of UK.", "Along with routine developement tasks, provide technical solutions on day to day challenges","Managing all the team members and supporting them in technical glitches","Making sure the quality work is being delivered"],
+    stack: [
+      "Javascript",
+      "React",
+      "Node",
+      "mySQL",
+      "Material UI",
+      "AdobeXD",
+    ],
+  },
   {
     jobTitle: "Full Stack Developer | React | Firebase",
     company: "Iplex Pvt Ltd",
     location: "Islamabad, Pakistan",
     from: "Mar 2021",
-    to: "Present",
+    to: "Jan 2022",
     summary: "As full stack react developer my achievements and tasks are",
     details: [
       "Developed application for the tech startups to calculate their performance index and included the content needed for Investors to have more insights about the company standing",
