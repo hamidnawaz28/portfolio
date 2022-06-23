@@ -8,7 +8,7 @@ import {
   Link,
 } from "@mui/material";
 import { ExpandMore, Business, LocationOn } from "@mui/icons-material";
-import { Theme } from "@mui/system";
+import { Box, Theme } from "@mui/system";
 import { useState } from "react";
 import { Dates as DateCard } from "../cards";
 import {
@@ -35,10 +35,17 @@ type AccordianProps = {
 
 const useStyles = makeStyles((theme: Theme) => ({
   heading: {},
+  textStackTitle: {
+    fontWeight: 600,
+  },
   stackCont: {
     display: "flex",
     flexDirection: "row",
     padding: 5,
+  },
+  accordianDetails: {
+    backgroundColor: theme.palette.common.white,
+    padding: "0px 5px",
   },
   quickDetails: {
     display: "grid",
@@ -80,7 +87,15 @@ const logoIcons: any = {
 
 export default function SimpleAccordion({ data }: AccordianProps) {
   const classes = useStyles();
-  const { heading, stackCont, quickDetails, flexDisplay, comLoc } = classes;
+  const {
+    heading,
+    stackCont,
+    textStackTitle,
+    accordianDetails,
+    quickDetails,
+    flexDisplay,
+    comLoc,
+  } = classes;
   const [expanded, isExpanded] = useState(true);
   const {
     jobTitle,
@@ -95,7 +110,7 @@ export default function SimpleAccordion({ data }: AccordianProps) {
   } = data;
 
   return (
-    <Accordion expanded={expanded}>
+    <Accordion expanded={expanded} className={accordianDetails}>
       <AccordionSummary
         expandIcon={<ExpandMore />}
         aria-controls="panel1a-content"
@@ -133,7 +148,11 @@ export default function SimpleAccordion({ data }: AccordianProps) {
             </Typography>
           );
         })}
-        <Typography variant="body2">Tech Stack:</Typography>
+        <Box pt={10}>
+          <Typography variant="body2" className={textStackTitle}>
+            Tech Stack:
+          </Typography>
+        </Box>
         <div className={stackCont}>
           {stack.map((item: any, id: number) => {
             return <div key={id}>{logoIcons[item]}</div>;

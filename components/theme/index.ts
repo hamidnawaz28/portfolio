@@ -8,7 +8,18 @@ import {
   lightGreen,
 } from "@mui/material/colors";
 
-const graceFont = ["Aller"].join(",");
+const graceFont = [
+  "-apple-system",
+  "BlinkMacSystemFont",
+  '"Segoe UI"',
+  "Roboto",
+  '"Helvetica Neue"',
+  "Arial",
+  "sans-serif",
+  '"Apple Color Emoji"',
+  '"Segoe UI Emoji"',
+  '"Segoe UI Symbol"',
+].join(",");
 const fancyFont = ["Montserrat"].join(",");
 const boldFont = ["LeagueSpartan", "Aller", "Montserrat"].join(",");
 
@@ -122,7 +133,7 @@ const theme = createTheme({
       letterSpacing: "-0.01562em",
     },
     h2: {
-      fontFamily: boldFont,
+      fontFamily: graceFont,
       fontWeight: 300,
       fontSize: "3.75rem",
       lineHeight: 1.2,
@@ -136,7 +147,7 @@ const theme = createTheme({
       letterSpacing: "0em",
     },
     h4: {
-      fontFamily: boldFont,
+      fontFamily: graceFont,
       fontWeight: 400,
       fontSize: "2.125rem",
       lineHeight: 1.235,
@@ -150,21 +161,21 @@ const theme = createTheme({
       letterSpacing: "0em",
     },
     h6: {
-      fontFamily: boldFont,
+      fontFamily: graceFont,
       fontWeight: 500,
       fontSize: "1.25rem",
       lineHeight: 1.6,
       letterSpacing: "0.0075em",
     },
     subtitle1: {
-      fontFamily: boldFont,
+      fontFamily: graceFont,
       fontWeight: 500,
       fontSize: "1.1rem",
       lineHeight: 1.75,
       letterSpacing: "0.00938em",
     },
     subtitle2: {
-      fontFamily: fancyFont,
+      fontFamily: graceFont,
       fontWeight: 500,
       fontSize: "0.875rem",
       lineHeight: 1.57,
@@ -178,7 +189,7 @@ const theme = createTheme({
       letterSpacing: "0.00938em",
     },
     body2: {
-      fontFamily: fancyFont,
+      fontFamily: graceFont,
       fontWeight: 400,
       fontSize: "0.875rem",
       lineHeight: 1.43,
