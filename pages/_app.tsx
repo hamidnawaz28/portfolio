@@ -45,7 +45,8 @@ const getIPData = async () => {
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    if (process.env.NODE_ENV != "development") getIPData();
+    const enableLocation = false;
+    if (process.env.NODE_ENV != "development" || enableLocation) getIPData();
   }, []);
 
   return (
