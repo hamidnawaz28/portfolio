@@ -5,42 +5,47 @@ import theme from "../components/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { Header } from "../containers/header";
 import { useState, useEffect } from "react";
-import { addADoc } from "../firebase";
+import { addADoc, editADoc } from "../firebase";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const [data, getData] = useState({});
+const getIPData = async () => {
+  try {
+    const request = await fetch("https://ipinfo.io/json?token=f49864b253a53e");
+    let data = await request.json();
 
-  function getLocation(getIPData: Function) {
+    data = {
+      ...data,
+      appCodeName: navigator?.appCodeName,
+      userAgent: navigator?.userAgent,
+      product: navigator?.product,
+      productSub: navigator?.productSub,
+      vendor: navigator?.vendor,
+      time: Date(),
+    };
+
+    const docId = await addADoc("user-ip", data);
+
     if (navigator.geolocation) {
-      const loc = navigator.geolocation.getCurrentPosition(
+      navigator.geolocation.getCurrentPosition(
         (position) => {
-          getIPData({ success: true, data: position.coords });
+          editADoc("user-ip", docId, {
+            ...data,
+            lat: position?.coords?.latitude,
+            long: position?.coords?.longitude,
+          });
         },
-        () => {
-          getIPData({ success: false });
+        (err) => {
+          console.log("Unable to get the location ", err);
         }
       );
     }
+  } catch (err) {
+    console.log("-----ipinfo----", err);
   }
+};
 
-  const getIPData = async (res: any) => {
-    try {
-      const request = await fetch(
-        "https://ipinfo.io/json?token=f49864b253a53e"
-      );
-      let data = await request.json();
-      if (res.success) {
-        data = { ...data, ...res.data };
-      }
-      getData(data);
-      addADoc("user-ip", data);
-    } catch (err) {
-      console.log("-----ipinfo----", err);
-    }
-  };
-
+function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    if (process.env.NODE_ENV != "development") getLocation(getIPData);
+    if (process.env.NODE_ENV != "development") getIPData();
   }, []);
 
   return (
