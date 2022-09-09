@@ -9,17 +9,57 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, EffectFade } from "swiper";
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    "& .swiper-pagination": {
+    width: "auto",
+    "& .swiper-pagination": {},
+    "& .swiper-button-prev": {
+      color: theme.palette.common.black,
+    },
+    "& .swiper-button-next": {
+      color: theme.palette.common.black,
+    },
+    "& .swiper-slide-title": {
       color: "red",
-      backgroundColor: "red",
+    },
+    "& .swiper-slide>img": {
+      width: "-webkit-fill-available",
     },
   },
 }));
-
+const portfolioPath = [
+  "thrift/submit_item_2",
+  "thrift/bulk_upload",
+  "thrift/db",
+  "thrift/login",
+  "thrift/product_details",
+  "thrift/search_results",
+  "thrift/settings",
+  "thrift/submit_item",
+  "thrift/submitted_items_detail",
+  "thrift/test_data",
+  "robolyx/admin_control",
+  "robolyx/dashboard",
+  "robolyx/ledger_control",
+  "robolyx/login",
+  "robolyx/manage_rules",
+  "robolyx/mapping",
+  "robolyx/new_rule",
+  "robolyx/rule_summary",
+  "robolyx/taxonomy_page",
+  "robolyx/upload_documents",
+  "saaspi/current_standing",
+  "saaspi/dashboard",
+  "saaspi/growth_graph",
+  "saaspi/industry_benchmark",
+  "saaspi/revenue_graph",
+  "saaspi/saaspi_library",
+  "saaspi/vc_deal_analyser",
+  "saaspi/youtube_embedd_video_library",
+];
 const Portfolio = () => {
   const { root } = useStyles();
   return (
@@ -33,27 +73,56 @@ const Portfolio = () => {
       <main>
         <div className={root}>
           <Swiper
+            effect="creative"
+            modules={[Pagination, Navigation, EffectFade]}
             pagination={{
-              dynamicBullets: true,
+              clickable: true,
             }}
-            modules={[Pagination, Navigation]}
+            style={{
+              height: "100vh",
+            }}
             navigation={true}
             className="mySwiper"
+            scrollbar={{ draggable: true }}
+            slidesPerView={1}
+            centeredSlides={true}
           >
-            <SwiperSlide>
-              <img src="/portfolio/thrift/submit_item.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/portfolio/thrift/submit_item_2.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+            {portfolioPath.map((link, id) => {
+              return (
+                <SwiperSlide
+                  key={id}
+                  title="Hamid"
+                  placeholder="dsdddddddddddddddd"
+                  about="about"
+                  accessKey="hamid"
+                  className="hamid"
+                  contextMenu="hamid"
+                  dir="hamid"
+                  id="hamid"
+                  lang="hamid"
+                  slot="hamid"
+                  defaultValue="hamid"
+                  datatype="hamid"
+                  prefix="hamid"
+                  property="hamid"
+                  resource="hamid"
+                  typeof="hamid"
+                  vocab="hamid"
+                  // Non-standard Attributes
+                  autoCapitalize="hamid"
+                  autoCorrect="hamid"
+                  autoSave="hamid"
+                  color="hamid"
+                  itemProp="hamid"
+                  itemType="hamid"
+                  itemID="hamid"
+                  itemRef="hamid"
+                  security="hamid"
+                >
+                  <img src={`/portfolio/${link}.png`} alt="" />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </main>
