@@ -37,8 +37,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.common.white,
   },
   contact: {
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.common.black,
+    margin: 5,
+  },
+  portfolio: {
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.common.white,
+    margin: 5,
   },
 }));
 
@@ -66,9 +72,11 @@ export default function ButtonAppBar() {
           {/* <Link href="/about-me" underline="none">
             <Button>About Me</Button>
           </Link> */}
-
           <Link href="/contact-me" underline="none">
             <Button className={classes.contact}>Contact</Button>
+          </Link>
+          <Link href="/portfolio" underline="none">
+            <Button className={classes.portfolio}>Portfolio</Button>
           </Link>
         </Toolbar>
       </AppBar>

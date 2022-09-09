@@ -2,12 +2,12 @@ import { NextPage } from "next";
 import { Seo } from "../components/seo";
 import { useTranslation } from "react-i18next";
 import { Footer } from "../containers/footer";
-import { makeStyles } from "@mui/styles";
 import Head from "next/head";
 import Image from "next/image";
 import { Grid } from "@mui/material";
 import { PersonalDetails } from "../containers/personal-details";
 import { WorkHistory } from "../containers/work-history";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   root: {
