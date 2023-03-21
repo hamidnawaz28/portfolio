@@ -25,7 +25,7 @@ export default function SEO({
 
   const siteData = {
     twitterUserName: "@hamid_nawaz28",
-    companyLogo: "./logo",
+    companyLogo: "/icons/logo.png",
     fbId: "",
     siteName: "Hamid Nawaz",
     siteUrl: "https://www.hamidnawaz.com/",
@@ -45,7 +45,7 @@ export default function SEO({
 
       {/* Web SEO */}
       <title>{`${pageTitle} | ${siteData.siteName}`}</title>
-      {/* <meta name="keywords" content={allTags} /> */}
+      <meta name="keywords" content={allTags} />
       <meta name="description" content={description} />
 
       {/* FB SEO */}

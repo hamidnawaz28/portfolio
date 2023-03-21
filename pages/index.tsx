@@ -28,6 +28,14 @@ const Home: NextPage = () => {
         pageTitle="Home"
         contentTitle="Full stack react and node software developer from pakistan"
         pageUrl=""
+        tags={[
+          "software developer",
+          "react",
+          "node",
+          "pakistan",
+          "remote",
+          "full stack developer",
+        ]}
       />
       <main>
         <PersonalDetails />
