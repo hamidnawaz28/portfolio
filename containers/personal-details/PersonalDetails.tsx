@@ -50,7 +50,7 @@ export default function ButtonAppBar() {
             </Link>
             {" | "}
             <Link
-              href="/personal-data/hamidcv.pdf"
+              href="/personal-data/resume.pdf"
               underline="none"
               color="secondary"
               target="_blank"

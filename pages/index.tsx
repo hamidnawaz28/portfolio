@@ -24,9 +24,9 @@ const Home: NextPage = () => {
   return (
     <div>
       <Seo
-        description="Homepage of Hamid Nawaz"
+        description="Hamid Nawaz"
         pageTitle="Home"
-        contentTitle="Software developer from pakistan"
+        contentTitle="Full stack react and node software developer from pakistan"
         pageUrl=""
       />
       <main>
