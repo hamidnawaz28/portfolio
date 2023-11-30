@@ -75,9 +75,6 @@ export default function ButtonAppBar() {
           <Link href="/contact-me" underline="none">
             <Button className={classes.contact}>Contact</Button>
           </Link>
-          <Link href="/portfolio" underline="none">
-            <Button className={classes.portfolio}>Portfolio</Button>
-          </Link>
         </Toolbar>
       </AppBar>
     </div>
