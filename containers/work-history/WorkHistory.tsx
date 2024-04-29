@@ -9,9 +9,31 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const workHistory = [
   {
+    jobTitle: "Senior Typescript Developer",
+    company: "iContainers",
+    location: "Barcelona, Spain(Remote)",
+    from: "Jan 2022",
+    to: "Present",
+    summary: "As lead full stack developer my tasks are",
+    details: [
+      "Designed and implemented a robust data migration mapper from MongoDB to PostgreSQL, ensuring seamless transfer of data from legacy databases",
+      "Defined and implemented PostgreSQL schemas based on project requirements, ensuring data integrity and adherence to best practices",
+      "Wrote comprehensive test cases to validate data migration processes, ensuring accuracy, completeness, and reliability of the transferred data",
+      "Do code reviews",
+    ],
+    links: [],
+    stack: [
+      "Typescript",
+      "Node",
+      "Nest.js",
+      "React",
+      "Posgresql",
+    ],
+  },
+  {
     jobTitle: "Lead Full Stack Developer",
-    company: "Nova",
-    location: "Liverpool, UK(Remote)",
+    company: "Fusion Startup Engineering Studio formally WeAreNova",
+    location: "Islamabad, Pakistan(Remote)",
     from: "Jan 2022",
     to: "Present",
     summary: "As lead full stack developer my tasks are",
