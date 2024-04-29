@@ -1,12 +1,11 @@
-import { makeStyles } from "@mui/styles";
-import { Theme } from "@mui/system";
-import { Typography, Link } from "@mui/material";
 import { WhatsApp } from "@mui/icons-material";
-import { Footer } from "../containers/footer";
+import { Box, Link, Typography } from "@mui/material";
+import { Theme } from "@mui/system";
 import { Seo } from "../components/seo";
+import { Footer } from "../containers/footer";
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
+const rootStyle = (theme: Theme) => {
+  return {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -16,8 +15,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "5% 2%",
     },
-  },
-}));
+  }
+}
+
 
 const contactDetails = [
   {
@@ -31,26 +31,26 @@ const contactDetails = [
 ];
 
 const ContactMe = () => {
-  const { root } = useStyles();
+
   return (
-    <div>
+    <Box>
       <Seo
         description="Contact me page of hamid nawaz"
         pageTitle="Contact Me"
         contentTitle="Contact Hamid Nawaz"
         pageUrl="/contact-me"
       />
-      <main>
-        <div className={root}>
+      <Box>
+        <Box sx={rootStyle}>
           {contactDetails.map((el, id) => {
             return (
-              <div key={id}>
+              <Box key={id}>
                 <Typography variant="h3">{el.label}</Typography>
-                <p>{el.info}</p>
-              </div>
+                <Box>{el.info}</Box>
+              </Box>
             );
           })}
-          <div
+          <Box
             style={{
               color: "#06d755",
               padding: "5px 10px",
@@ -68,11 +68,11 @@ const ContactMe = () => {
               Open WhatsApp{"  "}
               <WhatsApp style={{ verticalAlign: "middle", color: "#06d755" }} />
             </Link>
-          </div>
-        </div>
-      </main>
+          </Box>
+        </Box>
+      </Box>
       <Footer />
-    </div>
+    </Box>
   );
 };
 export default ContactMe;

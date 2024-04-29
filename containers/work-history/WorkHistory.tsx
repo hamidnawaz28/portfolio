@@ -1,12 +1,9 @@
-import { makeStyles } from "@mui/styles";
 import { Typography } from "@mui/material";
-import { Menu } from "@mui/icons-material";
 import { AccordionGroup } from "../../components/accordion";
-import { Theme } from "@mui/system";
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {},
-}));
+
+import { Box } from "@mui/material";
+
 const workHistory = [
   {
     jobTitle: "Senior Typescript Developer",
@@ -114,14 +111,14 @@ const workHistory = [
 ];
 
 export default function WorkHistory() {
-  const { root } = useStyles();
+
 
   return (
-    <div className={root}>
+    <Box  >
       <Typography variant="h6" align="center">
         Work History
       </Typography>
       <AccordionGroup dataArr={workHistory} />
-    </div>
+    </Box>
   );
 }

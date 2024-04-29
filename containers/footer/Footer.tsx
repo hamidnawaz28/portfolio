@@ -8,9 +8,14 @@ import {
   LinkedIn,
   Twitter,
 } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/material/styles";
 import { Theme } from "@mui/system";
+import { Box } from "@mui/material";
+const rootStyle = (theme: Theme) => {
+  return {
 
+  }
+}
 const useStyles = makeStyles((theme: Theme) => {
   return {
     footer: {

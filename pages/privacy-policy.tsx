@@ -1,23 +1,20 @@
-import { makeStyles } from "@mui/styles";
+import { Box, Typography } from "@mui/material";
 import { Theme } from "@mui/system";
-import { Typography, Link } from "@mui/material";
-import { WhatsApp } from "@mui/icons-material";
-import { Footer } from "../containers/footer";
 import { Seo } from "../components/seo";
+import { Footer } from "../containers/footer";
 
-const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        padding: "5% 20%",
-        [theme.breakpoints.down("sm")]: {
-            padding: "5% 2%",
-        },
+const rootStyle = (theme: Theme) => ({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    padding: "5% 20%",
+    [theme.breakpoints.down("sm")]: {
+        padding: "5% 2%",
     },
-}));
+
+});
 
 const privacyData = [
     {
@@ -51,29 +48,29 @@ const privacyData = [
 ];
 
 const ContactMe = () => {
-    const { root } = useStyles();
+
     return (
-        <div>
+        <Box>
             <Seo
                 description="Contact me page of hamid nawaz"
                 pageTitle="Contact Me"
                 contentTitle="Contact Hamid Nawaz"
                 pageUrl="/contact-me"
             />
-            <main>
-                <div className={root}>
+            <Box>
+                <Box sx={rootStyle}>
                     {privacyData.map((el, id) => {
                         return (
-                            <div key={id}>
+                            <Box key={id}>
                                 <Typography variant="h5">{el.label}</Typography>
                                 <Typography variant="body1">{el.info}</Typography>
-                            </div>
+                            </Box>
                         );
                     })}
-                </div>
-            </main>
+                </Box>
+            </Box>
             <Footer />
-        </div>
+        </Box>
     );
 };
 export default ContactMe;

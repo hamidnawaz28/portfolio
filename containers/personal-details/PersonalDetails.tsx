@@ -1,4 +1,4 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/material/styles";
 
 import { Typography, Link } from "@mui/material";
 import { Menu } from "@mui/icons-material";
@@ -12,8 +12,9 @@ import {
   AWS,
 } from "../../components/icons";
 import { Theme } from "@mui/system";
+import { Box } from "@mui/material";
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = ((theme: Theme) => ({
   root: {},
   self: {
     display: "flex",
@@ -31,10 +32,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export default function ButtonAppBar() {
-  const { root, selfDetails, skillsIcons, self } = useStyles();
+
 
   return (
-    <div className={root}>
+    <div className={useStyles.root}>
       {/* <img src="/personal-data/blueleaves.jpg" alt="" width="100%" /> */}
       <div className={self}>
         <div className={selfDetails}>

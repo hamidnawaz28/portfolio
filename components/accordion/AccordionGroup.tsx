@@ -1,16 +1,17 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/material/styles";
 import Accordion from "./Accordion";
 import { ExpandMore } from "@mui/icons-material";
 import { Timeline } from "../timeline";
 import { Timeline as TimelineWrap } from "@mui/lab";
 import { Theme } from "@mui/system";
+import { Box } from "@mui/material";
 
 interface AppProps {
   dataArr: object[];
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
+const rootStyle = (theme: Theme) => {
+  return {
     [theme.breakpoints.down("xs")]: {
       width: "100%",
     },
@@ -35,21 +36,22 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: "none",
       },
     },
-  },
-}));
+  }
+}
+
 
 export default function AccordianGroup({ dataArr }: AppProps) {
-  const { root } = useStyles();
+
 
   return (
-    <div className={root}>
+    <Box sx={rootStyle}>
       <TimelineWrap position="right">
         {dataArr?.map((el: any, key: number) => (
-          <Timeline key={key}>
+          <Timeline  >
             <Accordion data={el} />
           </Timeline>
         ))}
       </TimelineWrap>
-    </div>
+    </Box>
   );
 }
