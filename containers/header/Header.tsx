@@ -1,71 +1,53 @@
-import { makeStyles } from "@mui/material/styles";
 
 import {
   AppBar,
-  Toolbar,
-  Typography,
   Button,
   IconButton,
-  SvgIcon,
   Link,
+  Toolbar,
+  Typography
 } from "@mui/material";
-import { Menu } from "@mui/icons-material";
-import { Box } from "@mui/material";
-import { Theme } from "@mui/system";
+import { Box } from "@mui/system";
 
-const rootStyle = (theme: Theme) => {
-  return {
-
-  }
-}
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.common.white,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    color: theme.palette.common.black,
-  },
-  title: {
-    flexGrow: 1,
-    fontFamily: "Aller",
-    color: theme.palette.common.black,
-    "& span:nth-child(1)": {
-      color: theme.palette.primary.main,
-    },
-    "& span:nth-child(2)": {
-      color: theme.palette.secondary.main,
-    },
-  },
-  toolBar: {
-    backgroundColor: theme.palette.common.white,
-  },
-  contact: {
-    backgroundColor: theme.palette.common.white,
-    color: theme.palette.common.black,
-    margin: 5,
-  },
-  portfolio: {
-    backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.common.white,
-    margin: 5,
-  },
-}));
 
 export default function ButtonAppBar() {
-  const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <Box sx={(theme) => {
+      return {
+        flexGrow: 1,
+        backgroundColor: theme.palette.common.white,
+      }
+    }}>
       <AppBar position="static">
-        <Toolbar className={classes.toolBar}>
+        <Toolbar sx={(theme) => {
+          return {
+            backgroundColor: theme.palette.common.white,
+          }
+        }}>
           <IconButton
             edge="start"
-            className={classes.menuButton}
+            sx={(theme) => {
+              return {
+                marginRight: theme.spacing(2),
+                color: theme.palette.common.black,
+              }
+            }}
             aria-label="menu"
           ></IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" sx={(theme) => {
+            return {
+              flexGrow: 1,
+              fontFamily: "Aller",
+              color: theme.palette.common.black,
+              "& span:nth-child(1)": {
+                color: theme.palette.primary.main,
+              },
+              "& span:nth-child(2)": {
+                color: theme.palette.secondary.main,
+              },
+            }
+          }}>
             <Link href="/" underline="none">
               <span>Hamid</span>
               <span>Nawaz</span>
@@ -78,10 +60,16 @@ export default function ButtonAppBar() {
             <Button>About Me</Button>
           </Link> */}
           <Link href="/contact-me" underline="none">
-            <Button className={classes.contact}>Contact</Button>
+            <Button sx={(theme) => {
+              return {
+                backgroundColor: theme.palette.common.white,
+                color: theme.palette.common.black,
+                margin: 5,
+              }
+            }}>Contact</Button>
           </Link>
         </Toolbar>
       </AppBar>
-    </div>
+    </Box>
   );
 }

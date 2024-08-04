@@ -1,44 +1,31 @@
-import { makeStyles } from "@mui/material/styles";
 
-import { Typography, Link } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { Box, Link, Typography } from "@mui/material";
 import {
-  React,
-  Typescript,
-  Node,
-  MaterialUi,
+  AWS,
   Firebase,
   Jira,
-  AWS,
+  MaterialUi,
+  Node,
+  React,
+  Typescript,
 } from "../../components/icons";
-import { Theme } from "@mui/system";
-import { Box } from "@mui/material";
-
-const useStyles = ((theme: Theme) => ({
-  root: {},
-  self: {
-    display: "flex",
-    textAlign: "center",
-    verticalAlign: "center",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
-    padding: "100px 0px",
-  },
-  skillsIcons: {
-    display: "flex",
-  },
-  selfDetails: {},
-}));
 
 export default function ButtonAppBar() {
 
 
   return (
-    <div className={useStyles.root}>
+    <Box>
       {/* <img src="/personal-data/blueleaves.jpg" alt="" width="100%" /> */}
-      <div className={self}>
-        <div className={selfDetails}>
+      <Box sx={{
+        display: "flex",
+        textAlign: "center",
+        verticalAlign: "center",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "100px 0px",
+      }}>
+        <Box>
           <Typography variant="h4" pt={8}>
             Full Stack Developer
           </Typography>
@@ -59,8 +46,10 @@ export default function ButtonAppBar() {
               Download CV
             </Link>
           </Typography>
-        </div>
-        <div className={skillsIcons}>
+        </Box>
+        <Box sx={{
+          display: "flex",
+        }}>
           <React />
           <Typescript />
           <Node />
@@ -68,8 +57,8 @@ export default function ButtonAppBar() {
           <Firebase />
           <Jira />
           <AWS />
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }

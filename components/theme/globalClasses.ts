@@ -1,12 +1,5 @@
-import { makeStyles } from "@mui/material/styles";
-import { Theme } from "@mui/system";
-import { Box } from "@mui/material";
-const rootStyle = (theme: Theme) => {
-  return {
 
-  }
-}
-const globalClasses = makeStyles((theme: any) => {
+const globalClasses = (theme: any) => {
   return {
     button: {
       backgroundColor: theme.palette.secondary.main,
@@ -48,6 +41,6 @@ const globalClasses = makeStyles((theme: any) => {
     paragraph: {},
     importantNote: {},
   };
-});
+};
 
 export default globalClasses;

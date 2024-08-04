@@ -9,7 +9,7 @@ import {
 } from "@mui/lab";
 
 type AppProps = {
-  children: ReactNode;
+  children?: any;
   day?: number | string;
 };
 

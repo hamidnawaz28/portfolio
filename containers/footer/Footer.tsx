@@ -1,43 +1,13 @@
-import styles from "../../styles/Home.module.css";
-import { Grid, Typography, Link } from "@mui/material";
 import {
   Facebook,
-  YouTube,
   Instagram,
-  WhatsApp,
   LinkedIn,
   Twitter,
+  WhatsApp
 } from "@mui/icons-material";
-import { makeStyles } from "@mui/material/styles";
-import { Theme } from "@mui/system";
-import { Box } from "@mui/material";
-const rootStyle = (theme: Theme) => {
-  return {
+import { Link, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
-  }
-}
-const useStyles = makeStyles((theme: Theme) => {
-  return {
-    footer: {
-      width: "100%",
-      borderTop: "1px solid #eaeaea",
-      backgroundColor: theme.palette.primary.main,
-      color: "white",
-      paddingTop: 10,
-    },
-    copyright: {
-      textTransform: "uppercase",
-      fontSize: 10,
-    },
-    link: {
-      color: "white",
-    },
-    iconsCont: {
-      display: "flex",
-      justifyContent: "center",
-    },
-  };
-});
 
 const siteLinks: any = [
   {
@@ -63,7 +33,6 @@ const whatsapp = {
 };
 
 export default function Footer() {
-  const { footer, link, copyright, iconsCont } = useStyles();
 
   const icons: any = [
     {
@@ -89,20 +58,36 @@ export default function Footer() {
   ];
 
   return (
-    <footer className={footer}>
-      <div className={iconsCont}>
+    <Box sx={(theme) => {
+      return {
+        width: "100%",
+        borderTop: "1px solid #eaeaea",
+        backgroundColor: theme.palette.primary.main,
+        color: "white",
+        paddingTop: 10,
+      }
+    }}>
+      <Box sx={{
+        display: "flex",
+        justifyContent: "center",
+      }}>
         {icons.map((el: any, id: number) => {
           const { url, icon } = el;
           return (
-            <Link href={url} target="_blank" className={link} key={id}>
+            <Link href={url} target="_blank" sx={{
+              color: "white",
+            }} key={id}>
               {icon}
             </Link>
           );
         })}
-      </div>
-      <Typography align="center" className={copyright}>
+      </Box>
+      <Typography align="center" sx={{
+        textTransform: "uppercase",
+        fontSize: 10,
+      }}>
         @Copyright! All Rights Reserved 2021
       </Typography>
-    </footer>
+    </Box>
   );
 }
