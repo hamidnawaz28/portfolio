@@ -2,9 +2,12 @@
 import { Box, Link, Typography } from "@mui/material";
 import {
   AWS,
+  CSharp,
+  DotNet,
   Firebase,
   Jira,
   MaterialUi,
+  NestJs,
   Node,
   React,
   Typescript,
@@ -30,7 +33,7 @@ export default function ButtonAppBar() {
             Full Stack Developer
           </Typography>
           <Typography variant="body1" pb={8}>
-            Typescript | React | Node | AWS | Serverless | Microservices
+            Typescript | React | Node | Nest | AWS | C# | .NET Core | Microservices
           </Typography>
           <Typography variant="h6" pb={8}>
             <Link href="https://github.com/hamidnawaz28" underline="none">
@@ -47,18 +50,24 @@ export default function ButtonAppBar() {
             </Link>
           </Typography>
         </Box>
-        <Box sx={{
-          display: "flex",
-        }}>
-          <React />
-          <Typescript />
-          <Node />
-          <MaterialUi />
-          <Firebase />
-          <Jira />
-          <AWS />
-        </Box>
+        <TechIconContainer />
       </Box>
     </Box>
   );
+}
+
+
+const TechIconContainer = () => {
+  return <Box sx={{
+    display: "flex",
+  }}>
+    <React />
+    <Typescript />
+    <NestJs />
+    <Node />
+    <Firebase />
+    <AWS />
+    <CSharp />
+    <DotNet />
+  </Box>
 }

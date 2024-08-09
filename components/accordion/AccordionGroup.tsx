@@ -7,13 +7,17 @@ import { Dates as DateCard } from "../cards";
 import {
   AWS,
   CProgramming,
+  CSharp,
   Django,
+  DotNet,
   Figma,
   Firebase,
   Javascript,
   Jira,
   MaterialUi,
+  NestJs,
   Nginx,
+  Node,
   PostgreSQl,
   Python,
   React,
@@ -215,6 +219,7 @@ const logoElements: Record<string, JSX.Element> = {
   Javascript: <Javascript />,
   Vue: <Vue />,
   AWS: <AWS />,
+  Node: <Node />,
   React: <React />,
   Python: <Python />,
   Firebase: <Firebase />,
@@ -226,4 +231,7 @@ const logoElements: Record<string, JSX.Element> = {
   Nginx: <Nginx />,
   "Material UI": <MaterialUi />,
   "Embedded C": <CProgramming />,
+  "CSharp": <CSharp />,
+  "DotNet": <DotNet />,
+  "NestJs": <NestJs />
 };

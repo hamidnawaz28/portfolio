@@ -2,24 +2,23 @@ import { WorkHistoryInterface } from "./types";
 
 export const workHistorys: WorkHistoryInterface[] = [
     {
-        jobTitle: "Senior Typescript Developer",
+        jobTitle: "Senior Developer",
         company: "iContainers",
         location: "Barcelona, Spain(Remote)",
         from: "Jan 2022",
         to: "Present",
-        summary: "As lead full stack developer my tasks are",
+        summary: "As senior developer my roles and responsibilities are",
         responsibilities: [
             "Designed and implemented a robust data migration mapper from MongoDB to PostgreSQL, ensuring seamless transfer of data from legacy databases",
-            "Defined and implemented PostgreSQL schemas based on project requirements, ensuring data integrity and adherence to best practices",
+            "Defined and implemented PostgreSQL schemas based on project requirements, ensuring data integrity and adherence to best practices.",
             "Wrote comprehensive test cases to validate data migration processes, ensuring accuracy, completeness, and reliability of the transferred data",
-            "Do code reviews",
         ],
         links: [],
         stack: [
             "Typescript",
             "Node",
-            "Nest.js",
-            "React",
+            "AWS",
+            "NestJs",
             "Posgresql",
         ],
     },
@@ -42,9 +41,9 @@ export const workHistorys: WorkHistoryInterface[] = [
         stack: [
             "Javascript",
             "React",
+            "AWS",
             "Node",
             "MySQL",
-            "Material UI",
             "SASS",
             "AdobeXD",
         ],
@@ -73,7 +72,7 @@ export const workHistorys: WorkHistoryInterface[] = [
         ],
     },
     {
-        jobTitle: "Assistant Tools Engineer | Full Stack",
+        jobTitle: "Software Engineer",
         company: "Huawei Technologies",
         location: "Islamabad, Pakistan",
         from: "Sep 2019",
@@ -88,20 +87,5 @@ export const workHistorys: WorkHistoryInterface[] = [
         ],
         links: [],
         stack: ["Javascript", "ES6", "Vue", "React", "Python"],
-    },
-    {
-        jobTitle: "Freelance Software Developer",
-        company: "Fiver.com",
-        location: "Freelancing(Remote)",
-        from: "Jan 2018",
-        to: "June 2019",
-        summary: "",
-        responsibilities: [
-            "Developed various software applications as freelancer based on Verilog language and C.",
-            "Developed embedded systems software’s in C",
-            "Got 4.9 out of 5 star rating in 6 projects",
-        ],
-        links: [],
-        stack: ["Embedded C"],
-    },
+    }
 ];
