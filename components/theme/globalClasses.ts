@@ -1,5 +1,6 @@
+import { Theme } from "@mui/material";
 
-const globalClasses = (theme: any) => {
+const globalClasses = (theme: Theme) => {
   return {
     button: {
       backgroundColor: theme.palette.secondary.main,

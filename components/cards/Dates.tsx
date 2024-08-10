@@ -26,12 +26,11 @@ const detailsStyle = () => {
 
 
 interface SnapShotInterface {
-  from?: string;
-  to?: string;
+  from: string;
+  to: string;
 }
 
-const SnapShot = ({ from, to }: SnapShotInterface): any => {
-
+const SnapShot = ({ from, to }: SnapShotInterface) => {
   return (
     <Box sx={rootStyle}>
       <Box sx={detailsStyle}>

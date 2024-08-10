@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface WorkHistoryInterface {
     jobTitle: string
     company: string
@@ -12,4 +14,7 @@ export interface WorkHistoryInterface {
 
 export interface WorkHistoryDetailsInterface {
     workHistory: WorkHistoryInterface
+}
+export interface ContainerInterface {
+    children: React.ReactNode
 }

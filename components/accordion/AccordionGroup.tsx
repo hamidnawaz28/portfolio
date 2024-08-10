@@ -27,9 +27,9 @@ import {
 } from "../icons";
 import { Timeline as TimelineItem } from "../timeline";
 import { workHistorys } from "../../common/constant";
-import { WorkHistoryDetailsInterface, WorkHistoryInterface } from "../../common/types";
+import { ContainerInterface, WorkHistoryDetailsInterface, WorkHistoryInterface } from "../../common/types";
 
-export default function AccordianGroup() {
+export default function Timeline() {
   return (
     <Box sx={rootStyle}>
       <TimelineWrap position="right">
@@ -46,12 +46,14 @@ export default function AccordianGroup() {
 function AccordianItem({ workHistory }: WorkHistoryDetailsInterface) {
   const [expanded, isExpanded] = useState(true);
   return (
-    <Accordion expanded={expanded} sx={(theme) => {
-      return {
-        backgroundColor: theme.palette.common.white,
-        padding: "0px 5px",
-      }
-    }}>
+    <Accordion
+      expanded={expanded}
+      sx={(theme) => {
+        return {
+          backgroundColor: theme.palette.common.white,
+          padding: "0px 5px",
+        }
+      }}>
       <AccordionSummary
         expandIcon={<ExpandMore />}
         aria-controls="panel1a-content"
@@ -64,83 +66,120 @@ function AccordianItem({ workHistory }: WorkHistoryDetailsInterface) {
         <WorkHistoryAccordian workHistory={workHistory} />
       </AccordionDetails>
     </Accordion>
-
   );
 }
 
 function WorkHistoryAccordian({ workHistory }: WorkHistoryDetailsInterface) {
   return (
-    <Box sx={{
-      width: '100%'
-    }
-    }>
-      <Box sx={((theme) => {
-        return {
-          display: "grid",
-          gridTemplateColumns: "70% 30%",
-          [theme.breakpoints.down("sm")]: {
-            gridTemplateColumns: "repeat(1,1fr)",
-          },
-          paddingBottom: 20,
-        }
-      })}>
-        <Box sx={(theme => {
-          return {
-            [theme.breakpoints.down("sm")]: {
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-around",
-            }
-          }
-        })}>
-          <Box sx={{
-            display: "flex",
-            flexDirection: "row",
-          }}>
-            <Business style={{ paddingRight: 10 }} />
-            <Typography variant="body1">{workHistory.company}</Typography>
-          </Box>
-          <Box sx={{
-            display: "flex",
-            flexDirection: "row",
-          }}>
-            <LocationOn style={{ paddingRight: 10 }} />
-            <Typography variant="body1">{workHistory.location}</Typography>
-          </Box>
-        </Box>
-        <Box style={{ verticalAlign: "center" }}>
-          <DateCard from={workHistory.from} to={workHistory.to} />
-        </Box>
-      </Box>
-
-      <Typography variant="body1" gutterBottom>
-        {workHistory.summary}
-      </Typography>
-
-      {
-        workHistory.responsibilities.map((responsibility: any, id: number) => {
-          return (
-            <Typography key={id}>
-              {"• "}
-              {responsibility}
-            </Typography>
-          );
-        })
-      }
+    <WorkHistoryAccordianContainer>
+      <WorkHistoryDetailsContainer>
+        <WorkHistoryCompanyContainer>
+          <WorkHistoryCompany workHistory={workHistory} />
+          <WorkHistoryLocation workHistory={workHistory} />
+        </WorkHistoryCompanyContainer>
+        <WorkHistoryTimeline workHistory={workHistory} />
+      </WorkHistoryDetailsContainer>
+      <WorkHistorySummary workHistory={workHistory} />
+      <ResponsibilitiesContainer workHistory={workHistory} />
       <TechStackContainer workHistory={workHistory} />
-
       {workHistory.links.length != 0 && <WorkHistoryLinks workHistory={workHistory} />}
-
-    </Box>
+    </WorkHistoryAccordianContainer >
   )
 }
 
+const WorkHistoryCompanyContainer = ({ children }: ContainerInterface) => {
+  return <Box sx={(theme => {
+    return {
+      [theme.breakpoints.down("sm")]: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-around",
+      }
+    }
+  })}>
+    {
+      children
+    }
+  </Box >
+}
+
+const WorkHistoryAccordianContainer = ({ children }: ContainerInterface) => {
+  return <Box sx={{
+    width: '100%'
+  }}
+  >
+    {children}
+  </Box>
+}
+
+const WorkHistoryDetailsContainer = ({ children }: ContainerInterface) => {
+  return <Box sx={((theme) => {
+    return {
+      display: "grid",
+      gridTemplateColumns: "70% 30%",
+      [theme.breakpoints.down("sm")]: {
+        gridTemplateColumns: "repeat(1,1fr)",
+      },
+      paddingBottom: 20,
+    }
+  })}>
+    {children}
+  </Box>
+}
+
+const WorkHistoryTimeline = ({ workHistory }: WorkHistoryDetailsInterface) => {
+  return <Box style={{ verticalAlign: "center" }}>
+    <DateCard from={workHistory.from} to={workHistory.to} />
+  </Box>
+}
+
+const WorkHistorySummary = ({ workHistory }: WorkHistoryDetailsInterface) => {
+  return <Typography variant="body1" gutterBottom>
+    {workHistory.summary}
+  </Typography>
+}
+
+const WorkHistoryLocation = ({ workHistory }: WorkHistoryDetailsInterface) => {
+  return <Box sx={{
+    display: "flex",
+    flexDirection: "row",
+  }}>
+    <LocationOn style={{ paddingRight: 10 }} />
+    <Typography variant="body1">{workHistory.location}</Typography>
+  </Box>
+}
+
+const WorkHistoryCompany = ({ workHistory }: WorkHistoryDetailsInterface) => {
+  return <Box sx={{
+    display: "flex",
+    flexDirection: "row",
+  }}>
+    <Business style={{ paddingRight: 10 }} />
+    <Typography variant="body1">{workHistory.company}</Typography>
+  </Box>
+}
+
+
+const ResponsibilitiesContainer = ({ workHistory }: WorkHistoryDetailsInterface) => {
+  return <Box>
+    {
+      workHistory.responsibilities.map((responsibility: string, id: number) => {
+        return (
+          <Typography key={id}>
+            {"• "}
+            {responsibility}
+          </Typography>
+        );
+      })
+    }
+  </Box >
+}
 
 const WorkHistoryLinks = ({ workHistory }: WorkHistoryDetailsInterface) => {
   return <Box>
     <Typography>Links:</Typography>
     <Box>
-      {workHistory.links.map((workHistoryLink: any, id: number) => {
+      {workHistory.links.map((workHistoryLink: string, id: number) => {
         return (
           <Link href={workHistoryLink} key={id} target="_blank">
             <Typography>{workHistoryLink}</Typography>
@@ -153,9 +192,10 @@ const WorkHistoryLinks = ({ workHistory }: WorkHistoryDetailsInterface) => {
 
 
 const TechStackContainer = ({ workHistory }: WorkHistoryDetailsInterface) => {
-  return <>
+  return <Box>
     <TechStackHeader />
-    <TechStackIcons workHistory={workHistory}></TechStackIcons></>
+    <TechStackIcons workHistory={workHistory}></TechStackIcons>
+  </Box>
 }
 
 
@@ -170,7 +210,7 @@ const TechStackIcons = ({ workHistory }: WorkHistoryDetailsInterface) => {
     flexDirection: "row",
     padding: 5,
   }}>
-    {workHistory.stack.map((item: any, id: number) => {
+    {workHistory.stack.map((item: string, id: number) => {
       return <div key={id}>{logoElements[item]}</div>;
     })}
   </Box>
@@ -186,6 +226,7 @@ const TechStackHeader = () => {
     </Typography>
   </Box>
 }
+
 
 const rootStyle = (theme: Theme) => {
   return {

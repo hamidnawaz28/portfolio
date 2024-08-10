@@ -5,57 +5,47 @@ import {
   CSharp,
   DotNet,
   Firebase,
-  Jira,
-  MaterialUi,
   NestJs,
   Node,
   React,
   Typescript,
 } from "../../components/icons";
+import { ContainerInterface } from "../../common/types";
 
 export default function ButtonAppBar() {
-
-
   return (
-    <Box>
-      {/* <img src="/personal-data/blueleaves.jpg" alt="" width="100%" /> */}
-      <Box sx={{
-        display: "flex",
-        textAlign: "center",
-        verticalAlign: "center",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        padding: "100px 0px",
-      }}>
-        <Box>
-          <Typography variant="h4" pt={8}>
-            Full Stack Developer
-          </Typography>
-          <Typography variant="body1" pb={8}>
-            Typescript | React | Node | Nest | AWS | C# | .NET Core | Microservices
-          </Typography>
-          <Typography variant="h6" pb={8}>
-            <Link href="https://github.com/hamidnawaz28" underline="none">
-              Visit Github
-            </Link>
-            {" | "}
-            <Link
-              href="/personal-data/resume.pdf"
-              underline="none"
-              color="secondary"
-              target="_blank"
-            >
-              Download CV
-            </Link>
-          </Typography>
-        </Box>
-        <TechIconContainer />
-      </Box>
-    </Box>
+    <MainContainer>
+      <StackContainer />
+      <TechIconContainer />
+    </MainContainer >
   );
 }
 
+const MainContainer = ({ children }: ContainerInterface) => {
+  return <Box
+    sx={{
+      display: "flex",
+      textAlign: "center",
+      verticalAlign: "center",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+      padding: "100px 0px",
+    }}>
+    {children}
+  </Box>
+}
+
+const StackContainer = () => {
+  return <Box>
+    <Typography variant="h4" pt={8}>
+      Full Stack Developer
+    </Typography>
+    <Typography variant="body1" pb={8}>
+      Typescript | React | Node | Nest | AWS | C# | .NET Core | Microservices
+    </Typography>
+  </Box>
+}
 
 const TechIconContainer = () => {
   return <Box sx={{
@@ -70,4 +60,22 @@ const TechIconContainer = () => {
     <CSharp />
     <DotNet />
   </Box>
+}
+
+
+export const PortfolioContainer = () => {
+  return <Typography variant="h6" pb={8}>
+    <Link href="https://github.com/hamidnawaz28" underline="none">
+      Visit Github
+    </Link>
+    {" | "}
+    <Link
+      href="/personal-data/resume.pdf"
+      underline="none"
+      color="secondary"
+      target="_blank"
+    >
+      Download CV
+    </Link>
+  </Typography>
 }

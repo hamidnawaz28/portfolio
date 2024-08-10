@@ -9,7 +9,7 @@ import { Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 
-const siteLinks: any = [
+const siteLinks: Record<string, string>[] = [
   {
     label: "About Us",
     href: "/about-us",
@@ -34,7 +34,7 @@ const whatsapp = {
 
 export default function Footer() {
 
-  const icons: any = [
+  const icons: Record<string, string>[] = [
     {
       icon: <Facebook fontSize="large" />,
       url: "https://www.facebook.com/",
@@ -71,7 +71,7 @@ export default function Footer() {
         display: "flex",
         justifyContent: "center",
       }}>
-        {icons.map((el: any, id: number) => {
+        {icons.map((el: Record<string, string>, id: number) => {
           const { url, icon } = el;
           return (
             <Link href={url} target="_blank" sx={{
