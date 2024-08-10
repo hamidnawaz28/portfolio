@@ -32,9 +32,13 @@ const whatsapp = {
   qrAlt: "Hamid Nawaz QR",
 };
 
+interface IconsInterface {
+  icon: React.ReactNode
+  url: string
+}
 export default function Footer() {
 
-  const icons: Record<string, string>[] = [
+  const icons: IconsInterface[] = [
     {
       icon: <Facebook fontSize="large" />,
       url: "https://www.facebook.com/",
@@ -71,7 +75,7 @@ export default function Footer() {
         display: "flex",
         justifyContent: "center",
       }}>
-        {icons.map((el: Record<string, string>, id: number) => {
+        {icons.map((el, id: number) => {
           const { url, icon } = el;
           return (
             <Link href={url} target="_blank" sx={{
