@@ -37,7 +37,7 @@ export const workHistorys: WorkHistoryInterface[] = [
             "Along with routine development tasks, managed the engineering team",
             "Gave my feedback on product domain and provided technical support in day to day engineering problems.",
         ],
-        links: ["https://app.thrift-app.com"],
+        links: [],
         stack: [
             "Javascript",
             "React",

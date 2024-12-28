@@ -79,8 +79,8 @@ function WorkHistoryAccordian({ workHistory }: WorkHistoryDetailsInterface) {
         </WorkHistoryCompanyContainer>
         <WorkHistoryTimeline workHistory={workHistory} />
       </WorkHistoryDetailsContainer>
-      <WorkHistorySummary workHistory={workHistory} />
-      <ResponsibilitiesContainer workHistory={workHistory} />
+      {/* <WorkHistorySummary workHistory={workHistory} /> */}
+      {/* <ResponsibilitiesContainer workHistory={workHistory} /> */}
       <TechStackContainer workHistory={workHistory} />
       {workHistory.links.length != 0 && <WorkHistoryLinks workHistory={workHistory} />}
     </WorkHistoryAccordianContainer >
@@ -120,7 +120,7 @@ const WorkHistoryDetailsContainer = ({ children }: ContainerInterface) => {
       [theme.breakpoints.down("sm")]: {
         gridTemplateColumns: "repeat(1,1fr)",
       },
-      paddingBottom: 20,
+      paddingBottom: 5,
     }
   })}>
     {children}
@@ -218,7 +218,7 @@ const TechStackIcons = ({ workHistory }: WorkHistoryDetailsInterface) => {
 
 
 const TechStackHeader = () => {
-  return <Box pt={10}>
+  return <Box pt={0}>
     <Typography variant="body2" sx={{
       fontWeight: 600,
     }}>
