@@ -5,9 +5,11 @@ import {
   CSharp,
   DotNet,
   Firebase,
+  Java,
   NestJs,
   Node,
   React,
+  SpringBoot,
   Typescript,
 } from "../../components/icons";
 import { ContainerInterface } from "../../common/types";
@@ -42,7 +44,7 @@ const StackContainer = () => {
       Full Stack Developer
     </Typography>
     <Typography variant="body1" pb={8}>
-      Typescript | React | Node | Nest | AWS | C# | .NET Core | Microservices
+      Typescript | React | Node | Nest | AWS | C# | .NET Core | Spring Boot
     </Typography>
   </Box>
 }
@@ -59,6 +61,8 @@ const TechIconContainer = () => {
     <AWS />
     <CSharp />
     <DotNet />
+    <Java />
+    <SpringBoot />
   </Box>
 }
 

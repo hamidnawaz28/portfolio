@@ -12,6 +12,7 @@ import {
   DotNet,
   Figma,
   Firebase,
+  Java,
   Javascript,
   Jira,
   MaterialUi,
@@ -22,6 +23,7 @@ import {
   Python,
   React,
   Redux,
+  SpringBoot,
   Typescript,
   Vue,
 } from "../icons";
@@ -274,5 +276,7 @@ const logoElements: Record<string, JSX.Element> = {
   "Embedded C": <CProgramming />,
   "CSharp": <CSharp />,
   "DotNet": <DotNet />,
-  "NestJs": <NestJs />
+  "NestJs": <NestJs />,
+  "Java": <Java />,
+  "SpringBoot": <SpringBoot />,
 };
