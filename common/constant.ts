@@ -27,7 +27,7 @@ export const workHistorys: WorkHistoryInterface[] = [
         company: "Fusion Startup Engineering Studio formally WeAreNova",
         location: "Islamabad, Pakistan(Remote)",
         from: "Jan 2022",
-        to: "Present",
+        to: "Jul 2023",
         summary: "As lead full stack developer my tasks are",
         responsibilities: [
             "Added smart search functionality to the platform, resulted in improved querying, which ultimately led to excellent results.",
@@ -46,6 +46,7 @@ export const workHistorys: WorkHistoryInterface[] = [
             "MySQL",
             "SASS",
             "AdobeXD",
+            "DotNet"
         ],
     },
     {
@@ -86,6 +87,6 @@ export const workHistorys: WorkHistoryInterface[] = [
             "Developed data analysis and selenium-based automation tools in python.",
         ],
         links: [],
-        stack: ["Javascript", "ES6", "Vue", "React", "Python"],
+        stack: ["Javascript", "ES6", "Vue", "React", "Python", "DotNet"],
     }
 ];
