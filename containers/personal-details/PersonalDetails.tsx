@@ -44,7 +44,7 @@ const StackContainer = () => {
       Full Stack Developer
     </Typography>
     <Typography variant="body1" pb={8}>
-      Typescript | React | Node | Nest | AWS | C# | .NET Core | Spring Boot
+      Javascript |Typescript | React | Node | Nest | AWS
     </Typography>
   </Box>
 }
@@ -59,10 +59,6 @@ const TechIconContainer = () => {
     <Node />
     <Firebase />
     <AWS />
-    <CSharp />
-    <DotNet />
-    <Java />
-    <SpringBoot />
   </Box>
 }
 

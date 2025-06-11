@@ -45,8 +45,7 @@ export const workHistorys: WorkHistoryInterface[] = [
             "Node",
             "MySQL",
             "SASS",
-            "AdobeXD",
-            "DotNet"
+            "AdobeXD"
         ],
     },
     {
@@ -87,6 +86,6 @@ export const workHistorys: WorkHistoryInterface[] = [
             "Developed data analysis and selenium-based automation tools in python.",
         ],
         links: [],
-        stack: ["Javascript", "ES6", "Vue", "React", "Python", "DotNet"],
+        stack: ["Javascript", "ES6", "Vue", "React", "Python"],
     }
 ];
