@@ -4,7 +4,7 @@ export const workHistorys: WorkHistoryInterface[] = [
     {
         jobTitle: "Senior Developer",
         company: "iContainers",
-        location: "Spain, Remote",
+        location: "Barcelona, Spain",
         from: "Jan 2022",
         to: "Present",
         summary: "As senior developer my roles and responsibilities are",
@@ -25,7 +25,7 @@ export const workHistorys: WorkHistoryInterface[] = [
     {
         jobTitle: "Lead Full Stack Developer",
         company: "Fusion Startup Engineering Studio formally WeAreNova",
-        location: "Islamabad, Pakistan(Remote)",
+        location: "Liverpool, United Kingdom",
         from: "Jan 2022",
         to: "Jul 2023",
         summary: "As lead full stack developer my tasks are",
